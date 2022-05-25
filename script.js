@@ -33,3 +33,12 @@ fetch(
   .catch((error) => {
     console.log(error);
   });
+
+info = `<h1>.NET jobb i Västerås, Örebro & Eskilstuna via Arbetsförmedlingen</h1>
+  <div id="morejobs">
+    <a href="https://www.linkedin.com/jobs/" target="_blank" class="btn btn-primary" role="button">Sök fler jobb på LinkedIn</a>
+    <a href="https://ledigajobb.se/" target="_blank" class="btn btn-primary" role="button">Sök fler jobb på ledigajobb</a>
+    <a href="https://se.indeed.com/" target="_blank" class="btn btn-primary" role="button">Sök fler jobb på indeed</a>
+    </div>
+  <p>Sorterat på nyast först:</p>`;
+document.getElementById('info').innerHTML = info;
