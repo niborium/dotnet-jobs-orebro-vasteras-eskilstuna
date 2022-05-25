@@ -17,7 +17,6 @@ fetch(
   })
   .then((responseJson) => {
     var jobs = responseJson.hits;
-    console.log(jobs);
     let table = '<table class="table table-striped">';
     table +=
       '<tr><th>Titel</th><th>Företag</th><th>Sök senast</th><th>Typ</th><th>Ort</th></tr>';
