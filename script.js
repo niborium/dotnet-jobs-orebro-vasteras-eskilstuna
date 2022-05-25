@@ -1,12 +1,8 @@
-let headersList = {
-  Accept: 'application/json',
-};
-
 fetch(
   'https://jobsearch.api.jobtechdev.se/search?municipality=1880&municipality=1980&municipality=0484&q=.NET&offset=0&limit=100&sort=pubdate-desc',
   {
     method: 'GET',
-    headers: headersList,
+    Accept: 'application/json',
   }
 )
   .then((response) => {
