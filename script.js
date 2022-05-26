@@ -13,7 +13,7 @@ fetch(
   })
   .then((responseJson) => {
     var jobs = responseJson.hits;
-    let table = '<table class="table table-striped">';
+    let table = '<table class="table table-striped"><tbody id="tableData">';
     table +=
       '<tr><th>Titel</th><th>Företag</th><th>Sök senast</th><th>Typ</th><th>Ort</th></tr>';
     jobs.forEach((item) => {
@@ -27,7 +27,7 @@ fetch(
       </tr>
       `;
     });
-    table += '</table>';
+    table += '<tbody></table>';
     document.getElementById('main').innerHTML = table;
   })
   .catch((error) => {
@@ -39,6 +39,14 @@ info = `<h1>.NET jobb i Västerås, Örebro & Eskilstuna via Arbetsförmedlingen
     <a href="https://www.linkedin.com/jobs/" target="_blank" class="btn btn-primary" role="button">Sök fler jobb på LinkedIn</a>
     <a href="https://ledigajobb.se/" target="_blank" class="btn btn-primary" role="button">Sök fler jobb på ledigajobb</a>
     <a href="https://se.indeed.com/" target="_blank" class="btn btn-primary" role="button">Sök fler jobb på indeed</a>
-    </div>
-  <p>Sorterat på nyast först:</p>`;
+    </div><br>`;
 document.getElementById('info').innerHTML = info;
+
+$(document).ready(function () {
+  $('#myInput').on('keyup', function () {
+    var value = $(this).val().toLowerCase();
+    $('#tableData tr').filter(function () {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+    });
+  });
+});

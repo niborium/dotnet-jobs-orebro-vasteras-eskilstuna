@@ -10,6 +10,13 @@ p {text-align: center; }
   align-items: center;
   text-align: center;
 }
+input { 
+    text-align: center;
+    border: 3px solid #000 !important;
+    width: 50% !important;
+    margin: auto;
+    display: block;
+}
 table {
   display: flex;
   flex-flow: column;
